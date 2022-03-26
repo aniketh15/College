@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Finder</title>
+	<link rel="stylesheet" type="text/css" href="movie.css">
+</head>
+<body>
+	<div class="head">
+		<img src="movie_logo.png">
+		Movie Finder
+	</div>
+	<div class="movie">
+		<input id="movie_title" placeholder="Search for a movie to relax">
+		<button onclick="show_data()" style="width: 100px;">Submit</button>
+	</div>
+	<div class="content">
+		<script type="text/javascript">
+			function show_data(){
+				movie_name=document.getElementById("movie_title").value;
+				httpRequest =new XMLHttpRequest();
+				url="http://www.omdbapi.com/?apikey=fd6d0549&t="+movie_name;
+				httpRequest.open("GET",url);
+				httpRequest.send();
+				httpRequest.onreadystatechange = function(){
+					if(this.readyState==4 && this.status==200){
+						movie_data=JSON.parse(this.responseText);
+						document.getElementById("name").innerHTML=movie_data.Title+"("+movie_data.Year+")";
+						document.getElementById("name").style.fontSize="30px";
+						document.getElementById("rated").innerHTML="Rated  : "+movie_data.Rated;
+						document.getElementById("released").innerHTML="Released  : "+movie_data.Released;
+						document.getElementById("run_time").innerHTML="Runtime  : "+movie_data.Runtime;
+						document.getElementById("genre").innerHTML="Genre  : "+movie_data.Genre;
+						document.getElementById("director").innerHTML="Directed by  : "+movie_data.Director;
+						document.getElementById("actors").innerHTML="Starring  : "+movie_data.Actors;
+						document.getElementById("plot").innerHTML="Plot  : "+movie_data.Plot;
+						document.getElementById("production").innerHTML="Production  : "+movie_data.Production;
+						document.getElementById("language").innerHTML="Language  : "+movie_data.Language;
+						document.getElementById("imdb").innerHTML="IMDB Rating  : "+movie_data.imdbRating;
+						document.getElementById("poster").src=movie_data.Poster;
+						document.getElementById("poster").style.width="250px".height="250px";
+					}
+				}
+			}
+		</script>
+		<img id="poster"/>
+		<div id="name"></div>
+		<div id="rated"></div>
+		<div id="released"></div>
+		<div id="run_time"></div>
+		<div id="genre"></div>
+		<div id="director"></div>
+		<div id="actors"></div>
+		<div id="plot"></div>
+		<div id="production"></div>
+		<div id="language"></div>
+		<div id="imdb"></div>
+	</div>
+</body>
+</html>
