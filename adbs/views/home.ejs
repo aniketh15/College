@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>Mentor Recommendation</title>
+  </head>
+
+  <body style=" margin: 35px; border: 10px solid; width: 850px">
+    <h1 style="margin: 20px">MENTOR RECOMMENDATION SYSTEM</h1>
+    <form method="get" action="/">
+      <div class="mb-3" style="margin: 20px">
+        <label for="exampleInputEmail1" class="form-label">
+          <h2>Please enter your preference</h2></label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          name="preference"
+          aria-describedby="emailHelp"
+          style="width: 400px"
+        />
+      </div>
+
+      <button style="margin: 20px" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br />
+
+    <% outp.forEach(function(x){ %>
+
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title text-bg-dark p-3"><%= x.name %></h5>
+        <p class="card-text">
+          <strong>Years of Experience: </strong><%= x.years_of_exp %>
+        </p>
+        <p class="card-text">
+          <strong>Number of Projects: </strong> <%= x.no_of_proj %>
+        </p>
+        <p class="card-text">
+          <strong>Speciality:</strong><br />
+          <ul>
+          <% x.speciality.forEach(function(i){%> 
+           <li> <%= i%> </li>
+          <% }) %>
+        </ul>
+        </p>
+      </div>
+    </div>
+    <br />
+    <% }) %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
