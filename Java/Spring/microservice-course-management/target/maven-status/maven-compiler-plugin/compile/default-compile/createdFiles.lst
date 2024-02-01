@@ -1,0 +1,10 @@
+com\sha\microservicecoursemanagement\service\CourseService.class
+com\sha\microservicecoursemanagement\MicroserviceCourseManagementApplication.class
+com\sha\microservicecoursemanagement\service\CourseServiceImpl.class
+com\sha\microservicecoursemanagement\model\Course.class
+com\sha\microservicecoursemanagement\model\Transaction.class
+com\sha\microservicecoursemanagement\repository\CourseRepository.class
+com\sha\microservicecoursemanagement\controller\CourseController.class
+com\sha\microservicecoursemanagement\repository\TransactionRepository.class
+com\sha\microservicecoursemanagement\MicroserviceCourseManagementApplication$1.class
+com\sha\microservicecoursemanagement\intercomm\UserClient.class
